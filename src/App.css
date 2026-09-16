@@ -12,3 +12,31 @@
   font-weight: 700;
   letter-spacing: 0.12em;
 }
+
+/* Container dos cartões p ficar mais igual ao daily-habits*/
+.lista-tarefas {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  max-width: 400px;
+  margin: 20px 0;
+}
+
+/* Estilo base do cartão (caixa) */
+.cartao {
+  background-color: #ffffff;
+  border: 1px solid #e2e8f0;
+  border-radius: 8px;
+  padding: 16px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+}
+
+/* Diferenciação condicional de status */
+.cartao.concluida {
+  border-left: 6px solid #22c55e; /* Borda verde */
+  background-color: #f0fdf4;
+}
+
+.cartao.pendente {
+  border-left: 6px solid #eab308; /* Borda amarela */
+}
