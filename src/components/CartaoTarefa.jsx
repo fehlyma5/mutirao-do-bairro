@@ -1,14 +1,22 @@
-export default function CartaoTarefa({ tarefa, onAlternarStatus }) {
+export default function CartaoTarefa({ tarefa, onAlternarStatus, onExcluirTarefa }) {
   return (
     <article className={`cartao ${tarefa.concluida ? "concluida" : "pendente"}`}>
       <h3>{tarefa.titulo}</h3>
       <p>{tarefa.descricao}</p>
-      <span>Status: {tarefa.concluida ? "Concluída" : "Pendente"}</span>
       
-      {/* Ação nasce aqui e chama o callback via arrow function */}
-      <button type="button" onClick={() => onAlternarStatus(tarefa.id)}>
-        Alternar Status
-      </button>
+      <div className="cartao-rodape">
+        <span>Status: {tarefa.concluida ? "Concluída" : "Pendente"}</span>
+        
+        <div className="acoes">
+          <button type="button" onClick={() => onAlternarStatus(tarefa.id)}>
+            Alternar Status
+          </button>
+          
+          <button type="button" onClick={() => onExcluirTarefa(tarefa.id)}>
+            Excluir
+          </button>
+        </div>
+      </div>
     </article>
   );
 }

@@ -14,29 +14,69 @@
 }
 
 /* Container dos cartões p ficar mais igual ao daily-habits*/
+/* Layout geral da página */
+.app-container {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+  max-width: 600px;
+  margin: 30px auto;
+  font-family: sans-serif;
+}
+
+/* Estilo da caixa/painel */
+.painel {
+  background-color: #f8fafc;
+  border: 1px solid #cbd5e1;
+  border-radius: 8px;
+  padding: 20px;
+}
+
+/* Cartões individuais */
 .lista-tarefas {
   display: flex;
   flex-direction: column;
-  gap: 16px;
-  max-width: 400px;
-  margin: 20px 0;
+  gap: 12px;
+  margin-top: 15px;
 }
 
-/* Estilo base do cartão (caixa) */
 .cartao {
   background-color: #ffffff;
   border: 1px solid #e2e8f0;
-  border-radius: 8px;
+  border-radius: 6px;
   padding: 16px;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
 }
 
-/* Diferenciação condicional de status */
 .cartao.concluida {
-  border-left: 6px solid #22c55e; /* Borda verde */
-  background-color: #f0fdf4;
+  border-left: 6px solid #22c55e;
 }
 
 .cartao.pendente {
-  border-left: 6px solid #eab308; /* Borda amarela */
+  border-left: 6px solid #eab308;
+}
+
+.cartao-rodape {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 12px;
+}
+
+/* Espaçamento entre os botões */
+.acoes {
+  display: flex;
+  gap: 8px; /* Dá espaço de 8px entre os botões */
+}
+
+/* Estilização opcional para melhorar o visual dos botões */
+.acoes button {
+  padding: 6px 12px;
+  border-radius: 4px;
+  border: 1px solid #ccc;
+  background-color: #b1d5ad;
+  cursor: pointer;
+}
+
+.acoes button:hover {
+  background-color: #cb6a6a;
 }
