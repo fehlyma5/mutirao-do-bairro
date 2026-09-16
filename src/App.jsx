@@ -22,16 +22,20 @@ import "./App.css";
 */
 
 export default function App() {
+  const cartoes = [
+    { id: 1, titulo: "B.U teste 1", descricao: "Descrição do primeiro cartão." },
+    { id: 2, titulo: "B.U teste 2", descricao: "Descrição do segundo cartão." },
+    { id: 3, titulo: "B.U teste 3", descricao: "Descrição do terceiro cartão." },
+  ];
+
   return (
-    <main className="app">
-      <header className="hero">
-        <p className="eyebrow">MUTIRÃO DO BAIRRO</p>
-        <h1>Ponto de partida</h1>
-        <p>
-          Se você está lendo isto no navegador, o ambiente está funcionando.
-          Agora abra o ATIVIDADE.md e comece pela etapa E1.
-        </p>
-      </header>
-    </main>
+    <div className="container">
+      {cartoes.map((item) => (
+        <div key={item.id} className="card">
+          <h3>{item.titulo}</h3>
+          <p>{item.descricao}</p>
+        </div>
+      ))}
+    </div>
   );
 }
