@@ -52,7 +52,7 @@
 }
 
 .cartao.pendente {
-  border-left: 6px solid #eab308;
+  border-left: 6px solid #d70d06;
 }
 
 .cartao-rodape {
@@ -72,11 +72,45 @@
 .acoes button {
   padding: 6px 12px;
   border-radius: 4px;
-  border: 1px solid #ccc;
+  border: 1px solid #cccccc;
   background-color: #b1d5ad;
   cursor: pointer;
 }
 
 .acoes button:hover {
   background-color: #cb6a6a;
+}
+
+.formulario-tarefa {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.campo {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.campo input, .campo select {
+  padding: 8px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+.campo-checkbox {
+  margin: 4px 0;
+}
+
+.mensagem-erro {
+  color: #dc2626;
+  background-color: #fee2e2;
+  padding: 8px;
+  border-radius: 4px;
+  font-size: 14px;
+}
+
+.filtro-container {
+  margin-bottom: 12px;
 }

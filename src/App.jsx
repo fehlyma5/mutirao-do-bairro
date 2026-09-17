@@ -2,40 +2,82 @@ import { useState } from "react";
 import "./App.css";
 import Painel from "./components/Painel";
 import ListaTarefas from "./components/ListaTarefas";
+import FormularioTarefa from "./components/FormularioTarefa";
 
 export default function App() {
   const [tarefas, setTarefas] = useState([
-    { id: "t1", titulo: "Limpar a praça", descricao: "Mutirão às 09h", concluida: true },
-    { id: "t2", titulo: "Pintar o muro", descricao: "Trazer tintas", concluida: false },
-    { id: "t3", titulo: "Plantio de mudas", descricao: "Na horta comunitária", concluida: false },
+    {
+      id: "t1",
+      titulo: "Limpar a praça",
+      categoria: "Limpeza",
+      voluntarios: 5,
+      descricao: "Categoria: Limpeza | Voluntários: 5",
+      concluida: true,
+    },
+    {
+      id: "t2",
+      titulo: "Pintar o muro",
+      categoria: "Pintura",
+      voluntarios: 2,
+      descricao: "Categoria: Pintura | Voluntários: 2",
+      concluida: false,
+    },
   ]);
 
-  // Alterna o status gerando um novo array/objeto (sem mutar os originais)
+  const [categoriaFiltro, setCategoriaFiltro] = useState("Todas");
+
+  // Ações no estado
+  const handleAdicionarTarefa = (novaTarefa) => {
+    setTarefas((prev) => [...prev, novaTarefa]);
+  };
+
   const handleAlternarStatus = (id) => {
-    setTarefas((prevTarefas) =>
-      prevTarefas.map((tarefa) =>
-        tarefa.id === id ? { ...tarefa, concluida: !tarefa.concluida } : tarefa
-      )
+    setTarefas((prev) =>
+      prev.map((t) => (t.id === id ? { ...t, concluida: !t.concluida } : t))
     );
   };
 
-  // Remove apenas a tarefa clicada usando .filter()
   const handleExcluirTarefa = (id) => {
-    setTarefas((prevTarefas) => prevTarefas.filter((tarefa) => tarefa.id !== id));
+    setTarefas((prev) => prev.filter((t) => t.id !== id));
   };
 
-  // VALOR DERIVADO: Calculado na renderização (sem useState extra)
-  const totalConcluidas = tarefas.filter((t) => t.concluida).length;
+  // VALORES DERIVADOS: Filtro e contagem visível
+  const tarefasFiltradas =
+    categoriaFiltro === "Todas"
+      ? tarefas
+      : tarefas.filter((t) => t.categoria === categoriaFiltro);
+
+  const totalConcluidas = tarefasFiltradas.filter((t) => t.concluida).length;
 
   return (
     <div className="app-container">
+      <Painel titulo="Cadastrar Nova Tarefa">
+        <FormularioTarefa onAdicionarTarefa={handleAdicionarTarefa} />
+      </Painel>
+
       <Painel titulo="Painel de Tarefas">
-        <p>
-          Concluídas: <strong>{totalConcluidas}</strong> de <strong>{tarefas.length}</strong>
+        <div className="filtro-container">
+          <label htmlFor="filtro">Filtrar por Categoria: </label>
+          <select
+            id="filtro"
+            value={categoriaFiltro}
+            onChange={(e) => setCategoriaFiltro(e.target.value)}
+          >
+            <option value="Todas">Todas</option>
+            <option value="Geral">Geral</option>
+            <option value="Limpeza">Limpeza</option>
+            <option value="Pintura">Pintura</option>
+            <option value="Jardinagem">Jardinagem</option>
+          </select>
+        </div>
+
+        <p className="resumo-contagem">
+          Concluídas: <strong>{totalConcluidas}</strong> de{" "}
+          <strong>{tarefasFiltradas.length}</strong> visíveis
         </p>
-        
+
         <ListaTarefas
-          tarefas={tarefas}
+          tarefas={tarefasFiltradas}
           onAlternarStatus={handleAlternarStatus}
           onExcluirTarefa={handleExcluirTarefa}
         />
