@@ -13,16 +13,50 @@
   letter-spacing: 0.12em;
 }
 
-/* Container dos cartões p ficar mais igual ao daily-habits*/
-/* Layout geral da página */
+
+/*Aumente um pouco a largura máxima do container geral */
 .app-container {
-  display: flex;
-  flex-direction: column;
-  gap: 24px;
-  max-width: 600px;
-  margin: 30px auto;
-  font-family: sans-serif;
+  max-width: 850px; /* Aumentado para dar espaço na linha */
+  margin: 40px auto;
+  padding: 24px;
+  background-color: #ffffff;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
 }
+
+/* Ajuste o espaçamento e padding do menu */
+.menu-navegacao {
+  display: flex;
+  gap: 8px; /* Reduzido levemente o espaço entre eles */
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 24px;
+  flex-wrap: nowrap; /* Impede a quebra para a linha de baixo */
+}
+
+.menu-navegacao a {
+  text-decoration: none;
+  color: #4b5563;
+  font-weight: 600;
+  padding: 8px 12px; /* Reduzido o padding lateral */
+  border-radius: 6px;
+  transition: all 0.2s ease-in-out;
+  background-color: #f3f4f6;
+  white-space: nowrap; /* Evita que a palavra quebre em duas linhas */
+}
+
+
+.menu-navegacao a:hover {
+  background-color: #b1d5ad;
+  color: #1f2937;
+}
+
+/* Estilo do Link Ativo no Menu */
+.menu-navegacao a.ativo {
+  background-color: #cb6a6a;
+  color: #0f0e0e;
+}
+
 
 /* Estilo da caixa/painel */
 .painel {
@@ -113,4 +147,71 @@
 
 .filtro-container {
   margin-bottom: 12px;
+}
+
+/* Formulários */
+.formulario-tarefa {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  background-color: #fafafa;
+  padding: 20px;
+  border-radius: 8px;
+  border: 1px solid #e5e7eb;
+}
+
+.campo {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.campo label {
+  font-weight: 600;
+  font-size: 14px;
+  color: #374151;
+}
+
+.campo input, 
+.campo select {
+  padding: 10px;
+  border: 1px solid #d1d5db;
+  border-radius: 6px;
+  font-size: 14px;
+}
+
+.campo-checkbox {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-weight: 500;
+}
+
+.mensagem-erro {
+  color: #dc2626;
+  background-color: #fee2e2;
+  padding: 10px;
+  border-radius: 6px;
+  font-size: 14px;
+  border: 1px solid #fca5a5;
+}
+
+/* Container de Ações nos Cartões */
+.acoes {
+  display: flex;
+  gap: 8px;
+  margin-top: 12px;
+}
+
+.filtro-container {
+  margin-bottom: 16px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.resumo-contagem {
+  font-size: 14px;
+  color: #6b7280;
+  margin-bottom: 16px;
 }
