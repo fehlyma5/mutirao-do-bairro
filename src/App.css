@@ -65,7 +65,7 @@
 /* Espaçamento entre os botões */
 .acoes {
   display: flex;
-  gap: 8px; /* Dá espaço de 8px entre os botões */
+  gap: 8px; /* Dá espaço de 8px entre os botões assim a gente ganha suspiro*/
 }
 
 /* Estilização opcional para melhorar o visual dos botões */
