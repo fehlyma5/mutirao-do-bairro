@@ -1,72 +1,60 @@
-# Mutirão do Bairro — Atividade Final do Módulo 04
+# 🛠️ Mutirão do Bairro
 
-Template da atividade final de **Desenvolvimento Front-end com React**.
-Capacitação em Desenvolvimento Full Stack · ITEAM · Boa Vista/RR · 2026
-Professor: Esp. Virgílio do Rego Monteiro Borges Junior
+Uma aplicação web desenvolvida em React para gerenciamento e organização de tarefas de mutirões comunitários no bairro.
 
-## Como começar
+---
 
-1. Clique em **Use this template → Create a new repository**.
-2. Nomeie o seu repositório como `mutirao-do-bairro`.
-3. Clone, instale e rode:
+## 📋 Requisitos
+Para rodar este projeto localmente, você precisará de:
+* **Node.js** (versão 18 ou superior)
+* **npm** (gerenciador de pacotes)
 
-```bash
-git clone https://github.com/SEU-USUARIO/mutirao-do-bairro.git
-cd mutirao-do-bairro
-npm install
-cp .env.example .env
-npm run dev
-```
+---
 
-> Se você preferir recriar o projeto do zero com `npm create vite@latest .`, confirme
-> com `pwd` que você está **dentro da pasta do projeto**. Esse comando age na pasta
-> atual e pode apagar arquivos dela. É um acidente comum e irreversível.
+## 🚀 Instalação
 
-## Por onde seguir
+1. Clone o repositório para a sua máquina:
+   '''bash
+   git clone [https://github.com/seu-usuario/seu-repositorio.git](https://github.com/seu-usuario/seu-repositorio.git)
 
-Leia, nesta ordem:
+2. Acesse a pasta do seu projeto:
+   '''bash
+   cd seu-repositorio
 
-1. `ATIVIDADE.md` — o enunciado, os critérios de aceite e a pontuação
-2. `docs/00-COMECE-AQUI.md` — o mapa de tudo
-3. `docs/01-GUIA-DE-ETAPAS.md` — o que fazer em cada etapa e onde olhar
-4. `docs/02-ONDE-PROCURAR.md` — a página certa da documentação para cada dúvida
-5. `docs/04-PROTOCOLO-DE-DEPURACAO.md` — leia **antes** de pedir ajuda
+3. Instale as dependencias:
+   npm install
 
-## O que você preenche
+4. Execute o modo desenvolvedor:
+   npm run dev
+   (se tudo der certo em nome de Jesus, vai aparecer um localhost parecido com: https: localhost/5170) pode clicar em cima sem medo.
 
-| Arquivo | O que vai nele |
-| --- | --- |
-| `RESPOSTAS.md` | as 12 missões de documentação, com URL |
-| `DIARIO.md` | mínimo 5 entradas com mensagens de erro reais |
-| `README.md` | ao final, reescreva este arquivo descrevendo o **seu** projeto |
+## 📦 Build e Preview
+5. Para gerar a compilação final de produção e testar o build localmente:
+  npm run build
+  (aqui estamos gerando os arquivos otimizados)
 
-## Scripts
+7. Execute a pré-visualização do build de produção:
+   npm run preview
+   (e pronta você verá a aplicação no seu navegador, fique a vontade para testar)
 
-| Comando | O que faz |
-| --- | --- |
-| `npm run dev` | servidor de desenvolvimento |
-| `npm run build` | gera a versão de produção em `dist` |
-| `npm run preview` | serve localmente o build gerado |
+   <img width="895" height="718" alt="image" src="https://github.com/user-attachments/assets/7eb455f6-d4a0-4c61-bb5c-fce6126087c7" />
 
-## Ambiente
 
-| Ferramenta | Versão usada na montagem deste template |
-| --- | --- |
-| Node.js | `v22.16.0` — ambiente do agente; **abaixo do mínimo do React Router 8** |
-| npm | `10.9.2` |
-| React | `19.2.8` |
-| React Router | `8.4.0` |
-| Vite | `8.3.0` |
+## ✨ Funcionalidades
+Gerenciamento de Estado Global (TarefasContext): Compartilhamento de dados sem prop drilling.
 
-O React Router 8 exige Node 22.22+ e React 19.2.7+. Se o `npm install` falhar,
-confira a sua versão do Node antes de qualquer outra coisa.
+Navegação com React Router: SPA configurada com 6 rotas principais (/, /nova, /tarefas, /relatorio, /sugestoes, /sobre), rotas dinâmicas (/tarefas/:tarefaId) e página 404 personalizada.
 
-> **Validação de ambiente:** o conteúdo do template foi montado, mas o build final
-> precisa ser repetido em Node 22.22+ antes da liberação para a turma.
+Formulários Controlados: Cadastro com validação de campos obrigatórios sem uso de alertas nativos do navegador.
 
-## Usando um assistente de IA
+Persistência de Dados (localStorage): Sincronização automática do estado com tolerância a falhas e inicialização preguiçosa (lazy initialization).
 
-É permitido e registrado. Leia `AI_TUTOR.md` antes. Em resumo: o assistente pode
-te ajudar a entender erros, revisar o código que **você** escreveu e apontar
-documentação. Ele não pode escrever a atividade por você, e a defesa oral
-presencial vai revelar se escreveu.
+Integração com API Externa: Busca de sugestões com controle de requisição via AbortController e tratamento dos estados de carregamento, sucesso e erro.
+
+Efeitos e Título Dinâmico: Sincronização do título da aba do navegador para exibir a contagem de tarefas pendentes em tempo real.
+
+## Sobre o desenvolvedor:
+Fiz essa atividade como forma de avaliação final do módulo 4 do curso de full stack, cujo o foco era essa inserção no mundo fantástico do react.
+Prof Virgilio Junior conduziu essa jornada do saber com carga 220 mas deu para tirar o maior proveito possível.
+Grato ao ITEAM pela oportunidade.
+Dúvidas, apontamentos, arguições. Estou a disposição.
